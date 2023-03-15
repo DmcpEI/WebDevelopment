@@ -2,6 +2,10 @@ body {
     font-family: 'Monospace', 'Lucida Console', !important;
 }
 
+.color{
+    background: rgb(21,25,29);
+}
+
 .logo {
     height: 100%;
     width: 15%;
