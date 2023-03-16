@@ -7,7 +7,7 @@ body {
     height: auto;
 }
 .articles{
-    width:90%; /*Takes 90% width from WebContainer*/
+    width:90%; 
     height: auto;
     margin: auto;
 }
@@ -25,4 +25,11 @@ body {
     height: 100%;
     width: 50%;
 }
-  
+
+.home{ 
+    position:fixed; 
+    top: 5px; 
+    left: 10px; 
+    height : 20%;
+    width: auto;
+}
