@@ -35,6 +35,11 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 };
 
+const isValidMessage = message =>{
+    const regexMessage = /^[a-zA-Z0-9.,!? ]+$/;
+    return regexMessage.test(message);
+}
+
 const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -43,7 +48,7 @@ const isValidEmail = email => {
 const validateInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
-    const messageValue = message.value.trim();
+    const messageValue = message.value;
     /*
     const cardValue = card.value.trim();
     const streetValue = street.value.trim();
@@ -69,9 +74,12 @@ const validateInputs = () => {
 
     if(messageValue === ''){
         setError(message, 'Message is required');
+    }else if (!isValidMessage(messageValue)) {
+        setError(message,'Invalid input! Please only use letters, numbers, and certain punctuation.');
     }else{
         setSuccess(message);
     }
+    
  /*
     if(cardValue === ''){
         setError(card, "The card isn't valid");
