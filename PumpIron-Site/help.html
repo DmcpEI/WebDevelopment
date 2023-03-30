@@ -50,14 +50,19 @@
                     </select>
                 </div>
 
-                <div style="width: 95%;" class="input-control mb-3">
+                <div>
                     <label for="message" class="form-label text-light">Message*</label>
-                    <div style=" align-items: center;">
-                    <input type="text" id="message" name = "message" class="form-control"  placeholder="Write your message here">
-                            <div class = "error"></div>
-                    <div>
-                    <button type="submit" class="btn text-light" style="margin-left: 100px; width: 100px; height: 70px; background-color: #f80505;">Send</button>
-                    </div>
+                    <div style="width: 100%; display: table;">
+                        <div style="display: table-row">
+                            <div class="input-control" style="display: table-cell; width: 90%; margin-right: 20%;">
+                                <input type="text" id="message" name = "message" class="form-control"  placeholder="Write your message here">
+                                <div class = "error"></div>
+                            </div>
+                            &nbsp;
+                            <div style="display: table-cell;">
+                                <button type="submit" class="btn text-light mx-auto" style="background-color: #f80505;">Send</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
