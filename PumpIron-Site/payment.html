@@ -15,7 +15,7 @@
     <body class="backgroundImg">
 
         <div class="p-3 container-fluid">
-            <div style = "height: 150px; display: flex; align-items: center; justify-content: center;">
+            <div style = "height: 100px; display: flex; align-items: center; justify-content: center;">
     
                 <h1 style="font-size: 500%;" class="mx-auto text-center text-light">Payment</h1>
     
@@ -31,36 +31,42 @@
                     <div class = "error"></div>
                 </div>
 
-                <div class="mx-auto mb-3" style = "width: 40%;">
-                    <input class="form-control" type="text" aria-label="default input example" placeholder="Street Address">
+                <div class="mx-auto mb-3 input-control" style = "width: 40%;">
+                    <input id="street" name="street" class="form-control" type="text" aria-label="default input example" placeholder="Street Address">
+                    <div class = "error"></div>
                 </div>
 
-                <div class="mx-auto mb-3" style = "width: 40%;">
-                    <input class="form-control" type="text" aria-label="default input example" placeholder="Apt, unit, suite, etc. (optional)">
-                </div>
-
-                <div class="mx-auto mb-3" style = "width: 40%;">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Country</option>
+                <div class="mx-auto mb-3 input-control" style = "width: 40%;">
+                    <select id="select" name="select" class="form-select" aria-label="Default select example">
+                        <option value="" selected>Country</option>
                         <option value="1">Slovenia</option>
                         <option value="2">Portugal</option>
                         <option value="3">United Kingdom</option>
                     </select>
+                    <div class = "error"></div>
                 </div>
 
-                <div class="mx-auto mb-3" style = "width: 40%;">
-                    <input class="form-control" type="text" aria-label="default input example" placeholder="City / Town / Village">
+                <div class="mx-auto mb-3 input-control" style = "width: 40%;">
+                    <input id="city" name="city" class="form-control" type="text" aria-label="default input example" placeholder="City / Town / Village">
+                    <div class = "error"></div>
                 </div>
 
-                <div style="width: 40%;" class="mx-auto mb-5">
+                <div style="width: 35%;" class="mx-auto mb-5">
                     <div style="display: flex; align-items: center;">
-                    <input style="margin-right: 2%;" class="form-control" type="text" aria-label="default input example" placeholder="Province / Region">
-                    <input style="margin-left: 2%;" class="form-control" type="text" aria-label="default input example" placeholder="Postal Code">
+                        <div class="input-control">
+                            <input id="province" name="province" style="margin-right: 2%;" class="form-control" type="text" aria-label="default input example" placeholder="Province / Region">
+                            <div class = "error"></div>
+                        </div>
+                        &nbsp;
+                        <div class="input-control">
+                            <input id="postal" name="postal" style="margin-left: 2%;" class="form-control" type="text" aria-label="default input example" placeholder="Postal Code">
+                            <div class = "error"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
-                    <button type="button" class="btn text-light" style="background-color: #f80505; width: 80%;">Confirm Payment</button>
+                    <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;">Confirm Payment</button>
                 </div>
 
             </form>
