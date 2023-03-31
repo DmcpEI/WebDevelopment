@@ -31,7 +31,7 @@ const setSuccess = element => {
 };
 
 const isValidStreet = street =>{
-    const regexMessage = /^[a-zA-Z0-9.,!? ]+$/;
+    const regexMessage = /^[a-zA-Z0-9., ]+$/;
     return regexMessage.test(street);
 }
 
@@ -41,7 +41,7 @@ const isValidCity = city =>{
 }
 
 const isValidProvince = province =>{
-    const regexMessage = /^[a-zA-Z]+$/;
+    const regexMessage = /^[a-zA-Z ]+$/;
     return regexMessage.test(province);
 }
 
@@ -51,7 +51,7 @@ const isValidPostalCode = postalCode => {
 }
 
 const isValidSelect = select =>{
-    return select.value !== '';
+    return select.value != "0";
 }
 
 const validateInputs = () => {
@@ -60,7 +60,6 @@ const validateInputs = () => {
     const cityValue = city.value.trim();
     const provinceValue = province.value.trim();
     const postalValue = postal.value.trim();
-    const selectValue = select.value.trim();
     
  
     if(cardValue === ''){
@@ -103,7 +102,7 @@ const validateInputs = () => {
         setSuccess(postal);
     }
 
-    if(!isValidSelect(selectValue)){
+    if(!isValidSelect(select)){
         setError(select, 'Please select an option');
     }else{
         setSuccess(select);
