@@ -2,14 +2,6 @@ const form = document.getElementById('form');
 const username = document.getElementById('name');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
-/*
-const card = document.getElementById('card');
-const street = document.getElementById('street');
-const country = document.getElementById('country');
-const city = document.getElementById('city');
-const province = document.getElementById('Province');
-const postal = document.getElementById('postal');
-*/
 
 form.addEventListener('submit', e =>{
     e.preventDefault();
@@ -35,6 +27,11 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 };
 
+const isValidName = username =>{
+    const regexMessage = /^[a-zA-Z ]+$/;
+    return regexMessage.test(username);
+}
+
 const isValidMessage = message =>{
     const regexMessage = /^[a-zA-Z0-9.,!? ]+$/;
     return regexMessage.test(message);
@@ -49,17 +46,11 @@ const validateInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const messageValue = message.value;
-    /*
-    const cardValue = card.value.trim();
-    const streetValue = street.value.trim();
-    const countryValue = country.value.trim();
-    const cityValue = city.value.trim();
-    const provinceValue = province.value.trim();
-    const postalValue = postal.value.trim();
-    */
 
     if(usernameValue === ''){
     setError(username, 'Name is required');
+    }else if (!isValidName(usernameValue)) {
+        setError(username, 'Provide a name that only contains letters and spaces');
     }else{
     setSuccess(username);
     }
@@ -79,13 +70,5 @@ const validateInputs = () => {
     }else{
         setSuccess(message);
     }
-    
- /*
-    if(cardValue === ''){
-        setError(card, "The card isn't valid");
-    }else{
-        setSuccess(card);
-    }
-*/
 
 };
