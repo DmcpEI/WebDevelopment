@@ -60,7 +60,6 @@ const validateInputs = () => {
     const cityValue = city.value.trim();
     const provinceValue = province.value.trim();
     const postalValue = postal.value.trim();
-    const selectValue = select.value.trim();
     
  
     if(cardValue === ''){
@@ -103,7 +102,7 @@ const validateInputs = () => {
         setSuccess(postal);
     }
 
-    if(!isValidSelect(selectValue)){
+    if(!isValidSelect(select)){
         setError(select, 'Please select an option');
     }else{
         setSuccess(select);
