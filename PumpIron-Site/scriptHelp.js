@@ -5,7 +5,6 @@ const message = document.getElementById('message');
 
 form.addEventListener('submit', e =>{
     e.preventDefault();
-
     validateInputs();
 });
 
@@ -15,8 +14,16 @@ const setError = (element, message) => {
 
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
-    inputControl.classList.remove('success')
-}
+    inputControl.classList.remove('success');
+
+    // Add shake animation using jQuery
+    $(inputControl).addClass('shake');
+
+    // Remove the shake animation after 500ms
+    setTimeout(() => {
+        $(inputControl).removeClass('shake');
+    }, 500);
+};
 
 const setSuccess = element => {
     const inputControl = element.parentElement;
@@ -42,19 +49,19 @@ const isValidEmail = email => {
     return re.test(String(email).toLowerCase());
 }
 
-const validateInputs = () => {
+function ValidateUsername() {
     const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const messageValue = message.value;
-
     if(usernameValue === ''){
-    setError(username, 'Name is required');
+        setError(username, 'Name is required');
     }else if (!isValidName(usernameValue)) {
         setError(username, 'Provide a name that only contains letters and spaces');
     }else{
     setSuccess(username);
     }
+};
 
+function ValidateEmail() {
+    const emailValue = email.value.trim();
     if(emailValue === '') {
         setError(email, 'Email is required');
     }else if (!isValidEmail(emailValue)) {
@@ -62,7 +69,10 @@ const validateInputs = () => {
     }else {
         setSuccess(email);
     }
+};
 
+function ValidateMessage() {
+    const messageValue = message.value;
     if(messageValue === ''){
         setError(message, 'Message is required');
     }else if (!isValidMessage(messageValue)) {
@@ -70,5 +80,24 @@ const validateInputs = () => {
     }else{
         setSuccess(message);
     }
+};
+
+$("#name").on("change", function () {
+    ValidateUsername();
+});
+
+$("#email").on("change", function () {
+    ValidateEmail();
+});
+
+$("#message").on("change", function () {
+    ValidateMessage();
+});
+
+const validateInputs = () => {
+
+    ValidateUsername();
+    ValidateEmail();
+    ValidateMessage();
 
 };
