@@ -29,7 +29,7 @@
 
         <div class="container">
             
-            <form id = "form" action = "detailsHelp.php" method="post">
+            <form id="form" action = "detailsHelp.php" method="POST" onclick="window.location.href='detailsHelp.php'">
 
                 <div style = "width: 99%;" class="input-control">
                     <label for="name" class="form-label text-light">Name*</label>
@@ -45,7 +45,7 @@
 
                 <div style = "width: 99%;" class="input-control">
                     <label for="gymLocations" class="form-label text-light">Gym Location</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="gymlocation" class="form-select" aria-label="Default select example">
                         <option selected> Select...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>

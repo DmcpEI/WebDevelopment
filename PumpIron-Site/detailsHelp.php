@@ -23,9 +23,22 @@
             </div>
         </div>
 
-        <?php
-        include "footer.php";
-        ?>  
+        <div class="container pt-4">
+
+            <div class="row justify-content-center text-light">
+                <h4>Name: </h4> <p><?php echo $_POST["name"]?></p>
+                <h4>Email Address: </h4> <p><?php echo $_POST["email"]?></p>
+                <h4>Gym Location: </h4> <p><?php echo $_POST["gymlocation"]?></p>
+                <h4>Message: </h4> <br> <p><?php echo $_POST["message"]?></p>
+            </div>
+
+        </div>
+
+        <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
+            <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
+        </div> 
+
+        <br>
 
     </body>
 

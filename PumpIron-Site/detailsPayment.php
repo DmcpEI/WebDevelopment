@@ -23,9 +23,24 @@
             </div>
         </div>
 
-        <?php
-        include "footer.php";
-        ?>  
+        <div class="container pt-4">
+
+            <div class="row justify-content-center text-light">
+                <h4>Card Number: </h4> <p><?php echo $_POST["card"]?></p>
+                <h4>Street Address: </h4> <p><?php echo $_POST["street"]?></p>
+                <h4>Contry: </h4> <p><?php echo $_POST["select"]?></p>
+                <h4>City/Town/Village: </h4> <p><?php echo $_POST["city"]?></p>
+                <h4>Province: </h4> <p><?php echo $_POST["province"]?></p>
+                <h4>Postal Code: </h4> <p><?php echo $_POST["postal"]?></p>
+            </div>
+
+        </div>
+
+        <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
+            <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
+        </div>
+
+        <br>
 
     </body>
 

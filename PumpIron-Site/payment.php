@@ -27,7 +27,7 @@
 
         <div class="container">
 
-            <form id = "form" action = "detailsPayment.php" method="post">
+            <form id = "form" action = "detailsPayment.php" method="POST" onclick="window.location.href='detailsPayment.php'">
 
                 <div class="mx-auto mb-3 input-control" style = "width: 40%;">
                     <input id = "card" name = "card" autofocus class="form-control" type="text" placeholder="Card Number">

@@ -6,6 +6,12 @@ const message = document.getElementById('message');
 form.addEventListener('submit', e =>{
     e.preventDefault();
     validateInputs();
+
+    if (document.querySelectorAll('.success').length === 3) {
+        // Redirect to a new page
+        window.location.href = "http://localhost:8081/PumpIron-Site/detailsHelp.php";
+    }
+
 });
 
 const setError = (element, message) => {
