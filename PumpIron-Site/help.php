@@ -11,7 +11,9 @@
         <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script defer src="./scriptHelp.js"></script>
 
-        <a href="index.html"><img src="https://i.ibb.co/VmPv5Rp/Home-Button.png" class="home"></a>
+        <?php
+            include "logo.php"
+        ?>
 
     </head>
     
@@ -27,7 +29,7 @@
 
         <div class="container">
             
-            <form id = "form" action = "/">
+            <form id = "form" action = "detailsHelp.php" method="post">
 
                 <div style = "width: 99%;" class="input-control">
                     <label for="name" class="form-label text-light">Name*</label>
@@ -70,17 +72,9 @@
             </form>
         </div>
 
-        <div>
-            <nav class="navbar navbar-expand-md navbar-light border border-danger fixed-bottom" style="background-color: #f80505;">
-                <div class="mx-auto order-0">
-                    <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation" href="faq.html">FAQ's</a>
-                    <a class="navbar-brand mx-auto"> | </a>
-                    <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation" target = "_blank" href="https://www.instagram.com/dmcp_insta/">Facebook</a>
-                    <a class="navbar-brand mx-auto"> | </a>
-                    <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation"  target = "_blank" href="https://www.instagram.com/robertoandradexo/">Instagram</a>
-                </div>
-            </nav>
-        </div>
+        <?php
+            include "footer.php";
+        ?>
 
     </body>
 </html>

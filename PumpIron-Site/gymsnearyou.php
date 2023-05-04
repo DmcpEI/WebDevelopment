@@ -7,7 +7,9 @@
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="styles.css" />
 
-        <a href="index.html"><img src="https://i.ibb.co/VmPv5Rp/Home-Button.png" class="home"></a>
+        <?php
+            include "logo.php"
+        ?>
 
     </head>
 
@@ -47,17 +49,9 @@
             </div>
         </div>
 
-        <nav class="navbar navbar-expand-md navbar-light border border-danger fixed-bottom" style="background-color: #f80505;">
-            <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation" href="help.html">Help</a>
-                <a class="navbar-brand mx-auto"> | </a>
-                <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation" href="faq.html">FAQ's</a>
-                <a class="navbar-brand mx-auto"> | </a>
-                <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation" target = "_blank" href="https://www.instagram.com/dmcp_insta/">Facebook</a>
-                <a class="navbar-brand mx-auto"> | </a>
-                <a class="navbar-brand mx-auto text-light fs-5 hover-underline-animation"  target = "_blank" href="https://www.instagram.com/robertoandradexo/">Instagram</a>
-            </div>
-        </nav>
+        <?php
+            include "footer.php";
+        ?>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
