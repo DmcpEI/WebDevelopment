@@ -4,14 +4,9 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 
 form.addEventListener('submit', e =>{
-    e.preventDefault();
-    validateInputs();
-
-    if (document.querySelectorAll('.success').length === 3) {
-        // Redirect to a new page
-        window.location.href = "http://localhost:8081/PumpIron-Site/detailsHelp.php";
+    if(validateInputs()==false){
+        e.preventDefault();
     }
-
 });
 
 const setError = (element, message) => {
@@ -59,10 +54,13 @@ function ValidateUsername() {
     const usernameValue = username.value.trim();
     if(usernameValue === ''){
         setError(username, 'Name is required');
+        return false;
     }else if (!isValidName(usernameValue)) {
         setError(username, 'Provide a name that only contains letters and spaces');
+        return false;
     }else{
-    setSuccess(username);
+        setSuccess(username);
+        return true;
     }
 };
 
@@ -70,10 +68,13 @@ function ValidateEmail() {
     const emailValue = email.value.trim();
     if(emailValue === '') {
         setError(email, 'Email is required');
+        return false;
     }else if (!isValidEmail(emailValue)) {
         setError(email, 'Provide a valid email address');
+        return false;
     }else {
         setSuccess(email);
+        return true;
     }
 };
 
@@ -81,10 +82,13 @@ function ValidateMessage() {
     const messageValue = message.value;
     if(messageValue === ''){
         setError(message, 'Message is required');
+        return false;
     }else if (!isValidMessage(messageValue)) {
         setError(message,'Invalid input! Please only use letters, numbers, and certain punctuation.');
+        return false;
     }else{
         setSuccess(message);
+        return true;
     }
 };
 
@@ -106,4 +110,7 @@ const validateInputs = () => {
     ValidateEmail();
     ValidateMessage();
 
+    if(ValidateUsername()==false || ValidateEmail()==false || ValidateMessage()==false){
+        return false;
+    }
 };

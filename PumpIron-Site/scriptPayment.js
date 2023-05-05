@@ -8,8 +8,9 @@ const select = document.getElementById('select');
 
 
 form.addEventListener('submit', e =>{
-    e.preventDefault();
-    validateInputs();
+    if(validateInputs()==false){
+        e.preventDefault();
+    }
 });
 
 
@@ -95,10 +96,13 @@ function ValidateCard() {
     const cardValue = card.value.trim();
     if(cardValue === ''){
         setError(card, "Card number is required");
+        return false;
     }else if (!isValidCardNumber(cardValue)){
         setError(card, "Invalid Number");
+        return false;
     }else{
         setSuccess(card);
+        return true;
     }
 };
 
@@ -106,10 +110,13 @@ function ValidateStreet() {
     const streetValue = street.value.trim();
     if(streetValue === ''){
         setError(street, "Street name is required");
+        return false;
     }else if (!isValidStreet(streetValue)){
         setError(street, 'Invalid input! Please only use letters, numbers, and certain punctuation');
+        return false;
     }else{
         setSuccess(street);
+        return true;
     }
 };
 
@@ -117,10 +124,13 @@ function ValidateCity() {
     const cityValue = city.value.trim();
     if(cityValue === ''){
         setError(city, "City name is required");
+        return false;
     }else if (!isValidCity(cityValue)){
         setError(city, 'Invalid input! Please only use letters, numbers, and certain punctuation');
+        return false;
     }else{
         setSuccess(city);
+        return true;
     }
 };
 
@@ -128,10 +138,13 @@ function ValidateProvince() {
     const provinceValue = province.value.trim();
     if(provinceValue === ''){
         setError(province, "Province name is required");
+        return false;
     }else if (!isValidProvince(provinceValue)){
         setError(province, 'Invalid input! Please only use letters, numbers, and certain punctuation');
+        return false;
     }else{
         setSuccess(province);
+        return true;
     }
 };
 
@@ -139,18 +152,23 @@ function ValidatePostal() {
     const postalValue = postal.value.trim();
     if(postalValue === ''){
         setError(postal, "Postal code is required");
+        return false;
     }else if (!isValidPostalCode(postalValue)){
         setError(postal, "Invalid postal code! Please enter a valid postal code.");
+        return false;
     }else{
         setSuccess(postal);
+        return true;
     }
 };
 
 function ValidateSelect() {
     if(!isValidSelect(select)){
         setError(select, 'Please select an option');
+        return false;
     }else{
         setSuccess(select);
+        return true;
     }
 };
 
@@ -187,5 +205,9 @@ const validateInputs = () => {
     ValidateProvince();
     ValidatePostal();
     ValidateSelect();
+
+    if(ValidateCard()==false || ValidateStreet()==false || ValidateCity()==false || ValidateProvince()==false || ValidatePostal()==false || ValidateSelect()==false){
+        return false;
+    }
 
 };
