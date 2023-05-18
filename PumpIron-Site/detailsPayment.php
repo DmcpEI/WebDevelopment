@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css" />
 
         <?php
-            include "logo.php"
+            include "logo.php";
         ?>
 
     </head>
@@ -37,8 +37,10 @@
         </div>
 
         <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
-            <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
+            <button type="submit" name="confirm" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
         </div>
+
+        <?php include "db/savePayment.php" ?>
 
         <br>
 

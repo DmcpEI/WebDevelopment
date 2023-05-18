@@ -38,6 +38,8 @@
             <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
         </div> 
 
+        <?php include "db/saveHelpMessage.php" ?>
+
         <br>
 
     </body>

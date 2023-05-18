@@ -112,3 +112,23 @@
     75% { transform: translateX(-10px); }
     100% { transform: translateX(0); }
 }
+
+table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+th {
+    background-color: #f80505;
+    color: white;
+}
+tr:last-child td {
+    border-bottom: none;
+}
