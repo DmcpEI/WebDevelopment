@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$card', '$street', '$select', '$city', '$province', '$postal')";
 
         if ($conn->query($sql) === TRUE) {
-            //echo "New payment created successfully <br />";
+            header('Location: ../index.php');
         } else {
             $error_message = "Error " . $sql . "<br />" . $conn->error . "<br />";
             echo '<script>alert("' . $error_message . '");</script>';

@@ -20,7 +20,7 @@
         <div class="p-3 container-fluid">
             <div style = "height: 150px; display: flex; align-items: center; justify-content: center;">
     
-                <h1 style="font-size: 500%;" class="mx-auto text-center text-light" onclick="window.location.href='db/getAllHelpMessage.php'" >Help</h1>
+                <h1 style="font-size: 500%;" class="mx-auto text-center text-light" onclick="window.location.href='db/AllHelpMessage.php'" >Help</h1>
     
             </div>
         </div>

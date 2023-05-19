@@ -18,7 +18,7 @@
         <div class="p-3 container-fluid">
             <div style = "height: 100px; display: flex; align-items: center; justify-content: center;">
     
-                <h1 style="font-size: 500%;" class="mx-auto text-center text-light" onclick="window.location.href='db/getAllPayment.php'">Payment</h1>
+                <h1 style="font-size: 500%;" class="mx-auto text-center text-light" onclick="window.location.href='db/AllPayment.php'">Payment</h1>
     
             </div>
         </div>

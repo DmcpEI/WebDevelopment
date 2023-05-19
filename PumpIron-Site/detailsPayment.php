@@ -36,11 +36,19 @@
 
         </div>
 
-        <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
-            <button type="submit" name="confirm" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
-        </div>
+        <form action="db/savePayment.php" method="POST">
 
-        <?php include "db/savePayment.php" ?>
+            <input type = "hidden" name= "card" value= "<?php echo $_POST["card"] ?>">
+            <input type = "hidden" name= "street" value= "<?php echo $_POST["street"] ?>">
+            <input type = "hidden" name= "select" value= "<?php echo $_POST["select"] ?>">
+            <input type = "hidden" name= "city" value= "<?php echo $_POST["city"] ?>">
+            <input type = "hidden" name= "province" value= "<?php echo $_POST["province"] ?>">
+            <input type = "hidden" name= "postal" value= "<?php echo $_POST["postal"] ?>">
+
+            <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
+                <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;">Confirm</button>
+            </div> 
+        </form>
 
         <br>
 

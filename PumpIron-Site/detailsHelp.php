@@ -34,11 +34,17 @@
 
         </div>
 
-        <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
-            <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;" onclick="window.location.href='index.php'">Confirm</button>
-        </div> 
+        <form action="db/saveHelpMessage.php" method="POST">
 
-        <?php include "db/saveHelpMessage.php" ?>
+            <input type = "hidden" name= "name" value= "<?php echo $_POST["name"] ?>">
+            <input type = "hidden" name= "email" value= "<?php echo $_POST["email"] ?>">
+            <input type = "hidden" name= "gymlocation" value= "<?php echo $_POST["gymlocation"] ?>">
+            <input type = "hidden" name= "message" value= "<?php echo $_POST["message"] ?>">
+
+            <div style="width: 40%;" class="mx-auto d-flex justify-content-center">
+                <button type="submit" class="btn text-light" style="background-color: #f80505; width: 80%;">Confirm</button>
+            </div> 
+        </form>
 
         <br>
 
