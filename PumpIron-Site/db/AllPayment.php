@@ -48,16 +48,16 @@ $result = $conn->query($sql);
 
                 <?php
                 if ($result->num_rows > 0) {
-                    while ($message = $result->fetch_assoc()) {
+                    while ($payment = $result->fetch_assoc()) {
                         ?>
                         <tr>
-                            <td><?php echo $message["card_number"]; ?></td>
-                            <td><?php echo $message["street_address"]; ?></td>
-                            <td><?php echo $message["country"]; ?></td>
-                            <td><?php echo $message["city"]; ?></td>
-                            <td><?php echo $message["province"]; ?></td>
-                            <td><?php echo $message["postal"]; ?></td>
-                            <td><a href="editPayment.php">Edit</a> & Delete</td>
+                            <td><?php echo $payment["card_number"]; ?></td>
+                            <td><?php echo $payment["street_address"]; ?></td>
+                            <td><?php echo $payment["country"]; ?></td>
+                            <td><?php echo $payment["city"]; ?></td>
+                            <td><?php echo $payment["province"]; ?></td>
+                            <td><?php echo $payment["postal"]; ?></td>
+                            <td><a href="../editPaymentPage.php?idPayment=<?php echo $payment["id"]?>">Edit</a> & <a href="../deletePaymentPage.php?idPayment=<?php echo $payment["id"]?>">Delete</a></td>
                         </tr>
                         <?php
                     }
