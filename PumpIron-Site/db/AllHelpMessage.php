@@ -53,7 +53,7 @@ $result = $conn->query($sql);
                             <td><?php echo $message["email"]; ?></td>
                             <td><?php echo $message["gym"]; ?></td>
                             <td><?php echo $message["message"]; ?></td>
-                            <td><a href="editHelpMessage.php">Edit</a> & Delete</td>
+                            <td><a href="../editMessagePage.php?idMessage=<?php echo $message["id"]?>">Edit</a> & <a href="deleteMessage.php?idMessage=<?php echo $message["id"]?>">Delete</a></td>
                         </tr>
                         <?php
                     }

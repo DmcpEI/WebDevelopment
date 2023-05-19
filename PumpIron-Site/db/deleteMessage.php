@@ -9,16 +9,12 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$id = $_POST["idMessage"];
-$name = $_POST["name"];
-$email = $_POST["email"];
-$gym = $_POST["gymLocations"];
-$message = $_POST["message"];
+$id = $_GET["idMessage"];
 
-$sql = "UPDATE help_message SET name='$name', email='$email', gym='$gym', message='$message' WHERE id='$id'";
+$sql = "DELETE FROM help_message WHERE id = '$id'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully <br />";
+    echo "Record deleted successfully <br />";
     header('Location: AllHelpMessage.php');
 } else {
     echo "Error " . $sql . "<br />" . $conn->error . "<br />"; 
