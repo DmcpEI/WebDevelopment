@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 $id = $_POST["idMessage"];
 $name = $_POST["name"];
 $email = $_POST["email"];
-$gym = $_POST["gymLocations"];
+$gym = $_POST["gymlocation"];
 $message = $_POST["message"];
 
 $sql = "UPDATE help_message SET name='$name', email='$email', gym='$gym', message='$message' WHERE id='$id'";

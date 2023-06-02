@@ -57,7 +57,7 @@ $result = $conn->query($sql);
                             <td><?php echo $payment["city"]; ?></td>
                             <td><?php echo $payment["province"]; ?></td>
                             <td><?php echo $payment["postal"]; ?></td>
-                            <td><a href="../editPaymentPage.php?idPayment=<?php echo $payment["id"]?>">Edit</a> & <a href="../deletePaymentPage.php?idPayment=<?php echo $payment["id"]?>">Delete</a></td>
+                            <td><a href="../editPaymentPage.php?idPayment=<?php echo $payment["id"]?>">Edit</a> & <a href="deletePayment.php?idPayment=<?php echo $payment["id"]?>">Delete</a></td>
                         </tr>
                         <?php
                     }
